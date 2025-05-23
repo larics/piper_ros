@@ -81,6 +81,9 @@ def my_generate_move_group_launch(ld, moveit_config):
         extra_debug_args=["--debug"],
         # Set the display variable, in case OpenGL code is used internally
         additional_env={"DISPLAY": ":0"},
+        remappings=[
+            ('joint_states', 'joint_states_single')
+        ]
     )
     return ld
 
